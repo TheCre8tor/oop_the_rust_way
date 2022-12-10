@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 pub struct AverageCollection {
     list: Vec<i32>,
     average: f64,
@@ -11,6 +13,10 @@ pub struct AverageCollection {
  * */
 
 impl AverageCollection {
+    pub fn new(list: Vec<i32>) -> AverageCollection {
+        AverageCollection { list, average: 0.0 }
+    }
+
     pub fn add(&mut self, value: i32) {
         self.list.push(value);
         self.update_average();
@@ -35,5 +41,14 @@ impl AverageCollection {
     fn update_average(&mut self) {
         let total = self.list.iter().sum::<i32>();
         self.average = total as f64 / self.list.len() as f64;
+    }
+}
+
+impl Debug for AverageCollection {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("AverageCollection")
+            .field("list", &self.list)
+            .field("average", &self.average)
+            .finish()
     }
 }
