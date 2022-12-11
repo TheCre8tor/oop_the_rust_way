@@ -1,4 +1,4 @@
-use oop_the_rust_way::AverageCollection;
+use oop_the_rust_way::{AverageCollection, Calculator, CasioCalculator};
 
 fn main() {
     /* Rust is object-oriented: structs and enums have data,
@@ -12,5 +12,11 @@ fn main() {
     collection.add(2);
     collection.add(3);
     collection.add(10);
-    println!("{collection:?}")
+    println!("{collection:?}");
+
+    let calculator = CasioCalculator::new(4, 2);
+    let add = CasioCalculator::add(calculator);
+
+    println!("subtract: {}", calculator.subtract());
+    println!("add: {}", add);
 }

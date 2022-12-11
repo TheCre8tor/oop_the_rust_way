@@ -7,6 +7,7 @@ pub struct AverageCollection {
 }
 
 /* EXPLANATION:
+ ! Encapsulation that Hides Implementation Details ->
  * If encapsulation is a required aspect for a language to
  * be considered object-oriented, then Rust meets that requirement.
  * The option to use pub or not for different parts of code enables
