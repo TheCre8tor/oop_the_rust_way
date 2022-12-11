@@ -1,4 +1,8 @@
-use oop_the_rust_way::{AverageCollection, Calculator, CasioCalculator};
+use oop_the_rust_way::encapsulation::AverageCollection;
+use oop_the_rust_way::inheritance::*;
+use oop_the_rust_way::polymorphism::{Button, Screen, SelectBox};
+
+// use oop_the_rust_way::polymorphism::
 
 fn main() {
     /* Rust is object-oriented: structs and enums have data,
@@ -19,4 +23,25 @@ fn main() {
 
     println!("subtract: {}", calculator.subtract());
     println!("add: {}", add);
+
+    let screen = Screen {
+        components: vec![
+            Box::new(SelectBox {
+                width: 75,
+                height: 10,
+                options: vec![
+                    String::from("Yes"),
+                    String::from("Maybe"),
+                    String::from("No"),
+                ],
+            }),
+            Box::new(Button {
+                width: 50,
+                height: 10,
+                label: String::from("OK"),
+            }),
+        ],
+    };
+
+    screen.run();
 }

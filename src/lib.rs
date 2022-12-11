@@ -1,5 +1,3 @@
-mod encapsulation;
-mod inheritance;
+mod oop;
 
-pub use encapsulation::*;
-pub use inheritance::*;
+pub use oop::*;
